@@ -5,8 +5,8 @@ data "cloudflare_zone" "demery" {
 resource "cloudflare_record" "aws_multi_spa" {
   zone_id = data.cloudflare_zone.demery.id
   name    = "aws-multi-spa"
-  value   = "127.0.0.1" # Todo refer to cloudfront distribution
-  type    = "A"
+  value   = aws_cloudfront_distribution.s3_distribution.domain_name
+  type    = "CNAME"
 }
 
 locals {
