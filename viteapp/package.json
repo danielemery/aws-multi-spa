@@ -6,8 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "build-one": "tsc && BASE_PATH=/app-one vite build --mode app_one",
-    "build-two": "tsc && BASE_PATH=/app-two vite build --mode app_two",
+    "build-prod": "tsc && BASE_PATH=/app-one vite build --mode app_one && BASE_PATH=/app-two vite build --mode app_two",
     "preview": "vite preview"
   },
   "dependencies": {

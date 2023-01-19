@@ -1,19 +1,22 @@
 # AWS Multiple SPA
 
-Example deploying multiple SPAs on the same domain in S3 buckets behind cloudfront.
+Example deploying multiple SPAs on the same domain in S3 buckets.
 
-Once deployed it should be available at http://aws-multi-spa.demery.net
+It makes use of the error fallback page feature of static website hosting of S3 rather than the "magic-cloudfront-s3" link. This is because each SPA needs to specify it's own index.html as a 404 fallback.
 
-# Includes
+Currently hosted at http://d2jydt75pcq64z.cloudfront.net (subject to change or remove).
+
+## Includes
 
 - terraform config to create the buckets and cloudfront distribution
 - example vite spa app to deploy multiple copies of
 - Fallback to html
 
-# Doesn't Include
+## Doesn't Include
 
-- Bucket suitable for prod
+- Bucket suitable for prod (currently public)
 - DNS
+- SSL
 
 # Usage
 
@@ -40,9 +43,8 @@ In order to test multiple spas on one domain we use the same vite app built with
 ```sh
 cd viteapp
 
-pnpm run build-one
-# Manually upload to "app-one" folder in the "application-one" bucket
+pnpm run build-prod
 
-pnpm run build-two
-# Manually upload to "app-two" folder in the "application-two" bucket
+# Manually upload "app-one" folder in the "application-one" bucket
+# Manually upload "app-two" folder in the "application-two" bucket
 ```

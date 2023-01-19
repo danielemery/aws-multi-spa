@@ -1,8 +1,13 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+
+const basePath = process.env?.BASE_PATH ?? "/local";
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: process.env?.BASE_PATH ?? '/local',
-})
+  base: basePath,
+  build: {
+    outDir: `dist${basePath}`,
+  },
+});
