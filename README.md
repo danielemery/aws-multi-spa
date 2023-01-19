@@ -5,8 +5,15 @@ Example deploying multiple SPAs on the same domain in S3 buckets behind cloudfro
 Once deployed it should be available at http://aws-multi-spa.demery.net
 
 # Includes
-- terraform config to create the buckets, cloudfront, dns entries etc
+
+- terraform config to create the buckets and cloudfront distribution
 - example vite spa app to deploy multiple copies of
+- Fallback to html
+
+# Doesn't Include
+
+- Bucket suitable for prod
+- DNS
 
 # Usage
 
@@ -32,11 +39,10 @@ In order to test multiple spas on one domain we use the same vite app built with
 
 ```sh
 cd viteapp
-pnpm run build-one
-
-# Manually upload to "application-one" bucket
 
 pnpm run build-one
+# Manually upload to "app-one" folder in the "application-one" bucket
 
-# Manually upload to "application-two" bucket
+pnpm run build-two
+# Manually upload to "app-two" folder in the "application-two" bucket
 ```

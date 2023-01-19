@@ -8,15 +8,15 @@ import Root from "./routes/root";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: import.meta.env.BASE_URL,
     element: <Root />,
     children: [
       {
-        path: "page-one",
+        path: `${import.meta.env.BASE_URL}/page-one`,
         element: <PageOne />,
       },
       {
-        path: "page-two",
+        path: `${import.meta.env.BASE_URL}/page-two`,
         element: <PageTwo />,
       },
     ],

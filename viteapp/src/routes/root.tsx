@@ -12,28 +12,27 @@ function Root() {
           <a href={`${import.meta.env.VITE_APPLICATION_ONE_ROOT_URL}/page-one`}>
             Application One - Page One
           </a>
-          <li>
-            <a
-              href={`${import.meta.env.VITE_APPLICATION_ONE_ROOT_URL}/page-two`}
-            >
-              Application One - Page Two
-            </a>
-          </li>
-          <li>
-            <a
-              href={`${import.meta.env.VITE_APPLICATION_TWO_ROOT_URL}/page-one`}
-            >
-              Application Two - Page One
-            </a>
-          </li>
-          <li>
-            <a
-              href={`${import.meta.env.VITE_APPLICATION_TWO_ROOT_URL}/page-two`}
-            >
-              Application Two - Page Two
-            </a>
-          </li>
         </li>
+        <li>
+          <a href={`${import.meta.env.VITE_APPLICATION_ONE_ROOT_URL}/page-two`}>
+            Application One - Page Two
+          </a>
+        </li>
+        <li>
+          <a href={`${import.meta.env.VITE_APPLICATION_TWO_ROOT_URL}/page-one`}>
+            Application Two - Page One
+          </a>
+        </li>
+        <li>
+          <a href={`${import.meta.env.VITE_APPLICATION_TWO_ROOT_URL}/page-two`}>
+            Application Two - Page Two
+          </a>
+        </li>
+      </ul>
+      <ul>
+        {Object.entries(import.meta.env).map(([key, value]) => (
+          <li key={key}>{`${key} -> ${value}`}</li>
+        ))}
       </ul>
     </div>
   );
