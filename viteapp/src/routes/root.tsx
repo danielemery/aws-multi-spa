@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom";
 import "../App.css";
+import FlexLink from "../components/FlexLink";
 
 function Root() {
   return (
@@ -9,24 +10,32 @@ function Root() {
       <Outlet />
       <ul>
         <li>
-          <a href={`${import.meta.env.VITE_APPLICATION_ONE_ROOT_URL}/page-one`}>
+          <FlexLink
+            to={`${import.meta.env.VITE_APPLICATION_ONE_ROOT_URL}/page-one`}
+          >
             Application One - Page One
-          </a>
+          </FlexLink>
         </li>
         <li>
-          <a href={`${import.meta.env.VITE_APPLICATION_ONE_ROOT_URL}/page-two`}>
+          <FlexLink
+            to={`${import.meta.env.VITE_APPLICATION_ONE_ROOT_URL}/page-two`}
+          >
             Application One - Page Two
-          </a>
+          </FlexLink>
         </li>
         <li>
-          <a href={`${import.meta.env.VITE_APPLICATION_TWO_ROOT_URL}/page-one`}>
+          <FlexLink
+            to={`${import.meta.env.VITE_APPLICATION_TWO_ROOT_URL}/page-one`}
+          >
             Application Two - Page One
-          </a>
+          </FlexLink>
         </li>
         <li>
-          <a href={`${import.meta.env.VITE_APPLICATION_TWO_ROOT_URL}/page-two`}>
+          <FlexLink
+            to={`${import.meta.env.VITE_APPLICATION_TWO_ROOT_URL}/page-two`}
+          >
             Application Two - Page Two
-          </a>
+          </FlexLink>
         </li>
       </ul>
       <ul>

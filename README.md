@@ -10,7 +10,8 @@ Currently hosted at http://d2jydt75pcq64z.cloudfront.net (subject to change or r
 
 - terraform config to create the buckets and cloudfront distribution
 - example vite spa app to deploy multiple copies of
-- Fallback to html
+- Fallback plain html page when no routes match
+- `<FlexLink>` component to allow local routing where applicable
 
 ## Doesn't Include
 
