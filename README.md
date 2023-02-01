@@ -1,10 +1,12 @@
 # AWS Multiple SPA
 
+__Failed POC - this project was attempting to achieve it's result without falling back to cloudfront functions or similar. Unfortunately no complete solution was found - the solution documented below was a close as possible (it works but when serving the index at a front-end route will return a 404 status code with it).__
+
+__The project that required this is now using [cloudfront functions](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-functions.html) to achieve this instead.__
+
 Example deploying multiple SPAs on the same domain in S3 buckets.
 
 It makes use of the error fallback page feature of static website hosting of S3 rather than the "magic-cloudfront-s3" link. This is because each SPA needs to specify it's own index.html as a 404 fallback.
-
-Currently hosted at http://d2jydt75pcq64z.cloudfront.net (subject to change or remove).
 
 ## Includes
 
